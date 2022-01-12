@@ -11,7 +11,7 @@ while 1:
 
     elif ST==1:#Sing_up
         Sing(LNeme)        
-      
+        print(LNeme)
     elif ST==2:#Exit
         print("Good bey")
         break

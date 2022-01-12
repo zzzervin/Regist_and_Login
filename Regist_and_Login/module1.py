@@ -29,9 +29,8 @@ def Sing(A:list,):
         print("Hello",NLogin)        
         Npass=input("New_pass >>>")
         print("You new ",Npass)
-
-    return NLogin
-    return Npass
+        A.append(NLogin)
+    
 
 
         
