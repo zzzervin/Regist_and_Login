@@ -12,15 +12,15 @@ def RPass():
     # Пароль готов
     return psword 
 
-def Log(NL:list,NP:list):    
-    try:
+def Log(NL:list,NP:list):
+    while 1:
         Login=NL.index(input("Log_in >>>"))
         Pass=NP.index(input("Pass >>>"))
         if Login==Pass:
             print("Hello")
-            kmn()
-    except ValueError:
-        print("oops")
+            break
+        else:        
+            print("Password and login is wrong")
 
 def Sing(A:list,B:list):    
     PC=False
@@ -36,34 +36,40 @@ def Sing(A:list,B:list):
                     Npass=input("New_pass >>>")
                     PC=Pcheck(Npass)
                     if PC==True:
-                        print("You new ",Npass)                
+                        print("You new pass",Npass)                
                         B.append(Npass)
                         break
                     else:
-                         print("Ваш пароль не подходит.")
+                         print("Your password does not match")
             elif Q=="1":
                 RP=RPass()
-                print(RP)
+                print("You new pass",RP)
                 B.append(RP)
                 break
             
         else:
-            print("eiole")
+            print("Name is already taken")
 def Pcheck(pas:str)-> bool:
     spisok=list(pas)
     a=False
+    pT=0
     for q in spisok:
         if q.isdigit(): 
             a=True
+            pT+=1
         if q.isalpha():
             a=True
+            pT+=1
         if q.isupper():
             a=True
+            pT+=1
         if q.islower():
             a=True
+            pT+=1
         if q in list("@.,:;!_*-+()/#¤%&£$€"):
             a=True
-        if a==True:
+            pT+=1
+        if pT>=8:
             check=True
         else:
             check=False

@@ -8,6 +8,7 @@ while 1:
     ST=quest.index(input("(L)og_in, (S)ing_up, (E)xit >>>").upper())
     if ST==0:#Log_in
         Log(LNeme,NPass)
+        
     elif ST==1:#Sing_up
         Sing(LNeme,NPass)        
         print(LNeme)
