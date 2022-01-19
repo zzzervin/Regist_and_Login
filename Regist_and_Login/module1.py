@@ -14,10 +14,11 @@ def RPass():
 
 def Log(NL:list,NP:list):
     while 1:
-        Login=NL.index(input("Log_in >>>"))
+        Login=NL.index(input("Log_in >>>"))        
         Pass=NP.index(input("Pass >>>"))
         if Login==Pass:
             print("Hello")
+        
             break
         else:        
             print("Password and login is wrong")
@@ -45,10 +46,14 @@ def Sing(A:list,B:list):
                 RP=RPass()
                 print("You new pass",RP)
                 B.append(RP)
+                PC=True
                 break
             
         else:
             print("Name is already taken")
+
+        return  NLogin,Npass
+
 def Pcheck(pas:str)-> bool:
     spisok=list(pas)
     a=False
@@ -73,9 +78,22 @@ def Pcheck(pas:str)-> bool:
             check=True
         else:
             check=False
-    return check   
+    return check 
 
+def Failis(f:str,l:list):
+    fail=open(f,'r')#,encoding = "uft-8-sig"
+    for rida in fail:
+        l.append(rida.strip())#'\n'
+    fail.close()
+    return l
 
-        
-            
-            
+def FailisS(f:str,l:list):
+    fail=open(f,'w')
+    for el in l:
+        fail.write(el+'\n')
+    fail.close()
+
+def rida_salvistamine(f:str,rida:list):
+    fail=open(f,'a')
+    fail.write(rida+'\n')
+    fail.close()
